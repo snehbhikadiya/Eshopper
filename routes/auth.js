@@ -9,7 +9,7 @@ const passport = require("passport");
 const use = (fn) => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
-routes.get("/", use(authController.dashboard));
+routes.get("/dashboard", use(authController.dashboard));
 routes.post("/dashboard", use(authController.showdasboard));
 
 routes.get("/details", use(authController.details));
